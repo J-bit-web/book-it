@@ -11,7 +11,7 @@ import { BookResultsComponent } from './library/book-results/book-results.compon
 import { BookSearchComponent } from './library/book-search/book-search.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { BookComponent } from './shared/book/book.component';
-import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { HeaderComponent } from './header/header.component';
     BookSearchComponent,
     NavigationComponent,
     BookComponent,
-    HeaderComponent
+
   ],
   imports: [
     BrowserModule,
