@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit} from '@angular/core';
+import { EventEmitter, Output } from '@angular/core';
 
 @Component( {
   selector: 'app-navigation',
@@ -7,16 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 } )
 export class NavigationComponent implements OnInit {
+  @Output() currentPage = new EventEmitter<string>();
+  collapsed: boolean = true;
+  show: boolean = false;
 
+  constructor() {}
 
+  ngOnInit(): void {}
 
-
-  constructor() {
-
+  onSelectPage(page: string) {
+    // Page Change Logic - Pass Page to Parent
+    // console.log("NAV:", page);
+    this.currentPage.emit(page);
   }
-
-  ngOnInit(): void {
-
-
-
 }
+
+

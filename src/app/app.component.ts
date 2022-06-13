@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'book-it';
+  pageDisplayed = "bookshelf"
+
+  onNavigatePage( page: string ) {
+    // console.log("APP COMP:", page)
+    this.pageDisplayed = page;
+  }
 }

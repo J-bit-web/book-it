@@ -11,6 +11,7 @@ import { BookResultsComponent } from './library/book-results/book-results.compon
 import { BookSearchComponent } from './library/book-search/book-search.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { BookComponent } from './shared/book/book.component';
+import { AppRoutingModule } from './app/app-routing.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { BookComponent } from './shared/book/book.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
