@@ -9,15 +9,14 @@ import { Book } from './book.model';
 } )
 export class BookComponent implements OnInit {
   @Input() book: Book;
-  @Output() bookSelected = new EventEmitter<void>();
 
-  constructor() { }
+  constructor( private bookshelfService: BookshelfService ) { }
 
   ngOnInit(): void {
 
     onBookSelected(); {
       // Tell App that someone clicked on a book
-      this.bookSelected.emit();
+      this.bookshelfService.bookSelected.emit( this.book );
     }
   }
 }

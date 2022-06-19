@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/shared/book/book.model';
+import { LibraryService } from '../library.service';
 @Component({
   selector: 'app-book-results',
   templateUrl: './book-results.component.html',
@@ -7,24 +8,18 @@ import { Book } from 'src/app/shared/book/book.model';
 })
 export class BookResultsComponent implements OnInit {
 
- allBooks: Book[] = [
-    new Book(
-        'Book of Testing',
-        'Will Wilder',
-        'Mystery',
-        'https://source.unsplash.com/50x50/?mystery,book'
-    ),
-    // . . . I changed the variable to allBooks cause it is more descriptive in this case . . . //
-];
+  allBooks: Book[] = [];
 
 
 
 
 
 
-  constructor() { }
+
+  constructor(private libraryService: LibraryService) { }
 
   ngOnInit(): void {
+    this.allBooks = this.libraryService.getBooks();
   }
 
 }

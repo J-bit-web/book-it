@@ -1,10 +1,12 @@
-<div class="row mb-3" *ngFor="let bookEl of myBooks">
+<div class="row mb-3" *ngFor="let bookEl of myBooks; let i = index">
   <div class="col-md-12">
-    <app-book
-     *ngFor="let bookEl of myBooks"
-    [book]="bookEl"
-  (bookSelected)="handleBookSelected(bookEl)"
-></app-book>
+    <app-book [book]="bookElement"></app-book>
+    <button
+    class="float-right"
+    (click)="onRemoveBook(i)"
+    >
+  &minus;
+  </button>
   </div>
 </div>
     <!-- . . . -->
